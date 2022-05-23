@@ -16,7 +16,6 @@ fs.readdir(dir, { withFileTypes: true }, (err, files) => {
       if (file.isFile()) {
         fs.stat(path.join(dir, file.name), (err, stats) => {
           if (path.extname(file.name) == '.css') {
-            console.log(path.join(dir, file.name));
             const stream = fs.createReadStream(path.join(dir, file.name), 'utf-8');
             let data = '';
             stream.on('data', chunk => data += chunk);

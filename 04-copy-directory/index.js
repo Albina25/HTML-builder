@@ -14,7 +14,7 @@ function callback(err) {
 
 fs.readdir(srcDir, (err, files) => {
   if (err)
-    console.log(err);
+    throw err;
   else {
     files.forEach(file => {
       fs.copyFile(path.join(srcDir, file), path.join(targetDir, file), callback);

@@ -6,7 +6,6 @@ fs.readdir(dir, { withFileTypes: true }, (err, files) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('\n file:');
     files.forEach(file => {
       if (file.isFile()) {
         const index = file.name.indexOf('.');
